@@ -1,6 +1,7 @@
 {
   "name": "tea-collections-gp",
   "version": "0.0.0",
+  "homepage": "https://github.com/BerezinaMariya/itlogia-tea-collections-gp",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
