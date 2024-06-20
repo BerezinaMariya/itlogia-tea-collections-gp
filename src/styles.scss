@@ -55,16 +55,5 @@ body {
   100% {transform: rotate(360deg)}
 }
 
-/*Адаптив для заголовков слайдера и стрелок аккордиона*/
-@media screen and (max-width: 575px){
-  .ui-accordion .ui-accordion-header-icon {
-    right: 10px;
-  }
-
-  #carousel h2 {
-    font-size: 25px;
-  }
-}
-
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
