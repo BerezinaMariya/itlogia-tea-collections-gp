@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.container {
+  min-height: calc(100vh - 120px - 64px);
+}
+
+.accordion-item {
+  border-radius: var(--bs-accordion-inner-border-radius);
+  padding-top: 16px;
+}
+
+.accordion-button {
+  border-radius: var(--bs-border-radius-lg) !important;
+}
+
+.accordion-body {
+  padding-bottom: 0 !important;;
+}
+
+
+
+.loader-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.loader {
+  border: 15px solid #f3f3f3;
+  border-top: 15px solid #0d6efd;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+}
+
+/*Адаптив для заголовков слайдера и стрелок аккордиона*/
+@media screen and (max-width: 575px){
+  .ui-accordion .ui-accordion-header-icon {
+    right: 10px;
+  }
+
+  #carousel h2 {
+    font-size: 25px;
+  }
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

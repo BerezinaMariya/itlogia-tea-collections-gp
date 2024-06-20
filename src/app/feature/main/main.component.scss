@@ -1,0 +1,25 @@
+.modal-header, .modal-footer {
+  border: none;
+}
+
+.accordion {
+  --bs-accordion-btn-bg: #0D6EFD;
+  --bs-accordion-active-bg: #0D6EFD;
+  --bs-accordion-border-color: none;
+  --bs-accordion-btn-focus-box-shadow: none;
+  --bs-accordion-active-color: #fff;
+  --bs-accordion-btn-color: #fff;
+
+  --bs-accordion-btn-padding-y: 1.75rem;
+
+  --bs-accordion-btn-icon: url("../../../assets/images/accordion-icons/arrow-up.svg");
+  --bs-accordion-btn-active-icon: url("../../../assets/images/accordion-icons/arrow-up.svg");
+}
+
+.btn-close {
+  --bs-btn-close-focus-shadow: none;
+}
+
+
+
+

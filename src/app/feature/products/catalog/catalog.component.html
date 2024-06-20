@@ -1,0 +1,13 @@
+<div class="container py-5">
+  <div class="pt-4 pb-3">
+    <h2 class="fs-2 fw-bold text-body-emphasis text-center mb-4">{{catalogTitle}}</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center pt-3">
+
+      <product-card *ngFor="let product of products; let i = index;" [product]="product"></product-card>
+
+    </div>
+  </div>
+  <div *ngIf="loading" class="loader-bg">
+    <div class="loader"></div>
+  </div>
+</div>

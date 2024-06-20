@@ -1,0 +1,108 @@
+<div class="container py-5">
+  <div class="pt-4 px-5 mx-auto">
+    <h2 class="fs-2 fw-bold text-body-emphasis text-center mb-5">Сделать заказ</h2>
+    <div class="col-xl-6 col-lg-8 pt-3 mx-auto" id="order" *ngIf="!isSuccessMessageVisible">
+      <form class="row needs-validation" novalidate [formGroup]="orderForm">
+        <div class="col-md-4 col-sm-6 mt-3">
+          <label for="name" class="form-label">Имя</label>
+          <input type="text" class="form-control" id="name"
+                 formControlName="name"
+                 placeholder="" value="">
+          <div class="invalid-feedback" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+            <div class="text-danger" *ngIf="name?.errors?.['required']">
+              Пожалуйста, укажите имя.
+            </div>
+            <div class="text-danger" *ngIf="name?.errors?.['pattern']">
+              Имя может содержать только буквы.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mt-3">
+          <label for="lastName" class="form-label">Фамилия</label>
+          <input type="text" class="form-control" id="lastName" name="last_name" formControlName="last_name"
+                 placeholder="">
+          <div class="invalid-feedback" *ngIf="last_name?.invalid && (last_name?.dirty || last_name?.touched)">
+            <div class="text-danger" *ngIf="last_name?.errors?.['required']">
+              Пожалуйста, укажите фамилию.
+            </div>
+            <div class="text-danger" *ngIf="last_name?.errors?.['pattern']">
+              Фамилия может содержать только буквы.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mt-3">
+          <label for="phone" class="form-label">Телефон</label>
+          <input type="text" class="form-control" id="phone" name="phone" formControlName="phone" placeholder="">
+          <div class="invalid-feedback" *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+            <div class="text-danger" *ngIf="phone?.errors?.['required']">
+              Пожалуйста, укажите телефон.
+            </div>
+            <div class="text-danger" *ngIf="phone?.errors?.['pattern']">
+              В телефоне должно быть 11 цифр.
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mt-3">
+          <label for="country" class="form-label">Страна</label>
+          <input type="text" class="form-control" id="country" name="country" formControlName="country" placeholder="">
+          <div class="invalid-feedback"
+               *ngIf="country?.invalid
+                   && (country?.touched || country?.dirty)
+                   && country?.errors?.['required']">
+            Пожалуйста, укажите страну.
+          </div>
+        </div>
+        <div class="col-sm-6 mt-3">
+          <label for="index" class="form-label">Индекс</label>
+          <input type="text" class="form-control" id="index" name="zip" formControlName="zip"
+                 placeholder="" mask="000000">
+          <div class="invalid-feedback"
+               *ngIf="zip?.invalid
+                   && (zip?.touched || zip?.dirty)
+                   && zip?.errors?.['required']">
+            Пожалуйста, укажите индекс.
+          </div>
+        </div>
+        <div class="col-12 mt-3">
+          <label for="product" class="form-label">Товар</label>
+          <input type="text" class="form-control" id="product" name="product" formControlName="product" placeholder="">
+          <div class="invalid-feedback"
+               *ngIf="product?.invalid
+                   && (product?.touched || product?.dirty)
+                   && product?.errors?.['required']">
+            Пожалуйста, выберите товар.
+          </div>
+        </div>
+        <div class="col-12 mt-3">
+          <label for="address" class="form-label">Адрес</label>
+          <input type="text" class="form-control" id="address" name="address" formControlName="address" placeholder="">
+          <div class="invalid-feedback" *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+            <div class="text-danger" *ngIf="address?.errors?.['required']">
+              Пожалуйста, укажите адрес.
+            </div>
+            <div class="text-danger" *ngIf="address?.errors?.['pattern']">
+              Адрес может содержать только буквыы, цифры, пробелы, дефис и слеш.
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-3">
+          <label for="comment" class="form-label">Комментарий</label>
+          <textarea class="form-control" id="comment" name="comment" formControlName="comment"
+                    placeholder=""></textarea>
+        </div>
+        <div class="mt-4">
+          <button class="btn btn-primary px-5" id="create-order" type="button" (click)="createOrder()"
+          [disabled]="isLoading">
+            Отправить
+          </button>
+          <div class="invalid-feedback" *ngIf="isFailMessageVisible" id="order-fail-message">
+            Произошла ошибка. Попробуйте еще раз.
+          </div>
+        </div>
+      </form>
+    </div>
+    <p class="text-body-emphasis text-center" *ngIf="isSuccessMessageVisible" id="order-success-message">
+      Спасибо за заказ!
+    </p>
+  </div>
+</div>

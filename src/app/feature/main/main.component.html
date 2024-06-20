@@ -1,0 +1,77 @@
+<main>
+  <div class="container py-5">
+    <div class="mb-5 position-relative">
+      <img src="../../../assets/images/carousel/banner-1.png" class="d-block w-100" alt="Banner">
+      <div class="position-absolute top-0 start-0 end-0 h-100 py-0 d-flex flex-column justify-content-center col-9">
+        <div class="carousel-caption text-start text-body-emphasis py-0 position-relative">
+          <h2 class="display-5 fw-bold mt-5 mb-1 mb-sm-5 px-4 px-lg-0">Скидки на травяные чаи</h2>
+          <p class="fs-5 mb-0 mb-sm-2 mb-md-5 d-none d-sm-block">
+            Узнай все подробности, заполнив заявку
+          </p>
+          <p class="mb-0 px-4 px-lg-0">
+            <a class="btn btn-primary px-5" routerLink='/order' routerLinkActive="active">Заполнить</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-xl-5 py-md-3 px-2 mx-auto col-lg-8">
+      <h2 class="fs-2 fw-bold text-body-emphasis text-center mb-5">Ответы на часто задаваемые вопросы</h2>
+
+      <ngb-accordion [closeOthers]="true" activeIds="static-1">
+        <ngb-panel id="static-1" title="Собираете ли вы подарочные боксы?">
+          <ng-template ngbPanelContent>
+            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-2" title="Сколько у вас разновидностей чая?">
+          <ng-template ngbPanelContent>
+            В нашем ассортименте более 1000 разновидностей чая. Мы гордимся нашей коллекцией. Здесь каждый
+            найдёт напиток по вкусу.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-3" title="В какой срок осуществляется доставка?">
+          <ng-template ngbPanelContent>
+            <div>
+              <p>
+                Курьерская доставка осуществляется в тот же день, если заказ оформлен до 13:00 часов, и на
+                следующий день, если заказ оформлен до 18:00 часов. Также можно выбрать любой другой удобный
+                день для курьерской доставки или заказать самовывоз из интернет-магазина или пункта выдачи наших
+                партнеров:
+              </p>
+              <ul class="mb-0">
+                <li>BOXBERRY</li>
+                <li>CDEK</li>
+                <li>Почта России</li>
+              </ul>
+            </div>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-4" title="У вас обновляется ассортимент?">
+          <ng-template ngbPanelContent>
+            Мы следим за трендами мира чая и постоянно обновляем ассортимент, чтобы удивлять и радовать вас.
+            Попробуйте новинки, которые недавно появились в нашей чайной коллекции.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-5" title="Какого объема у вас пачки чая?">
+          <ng-template ngbPanelContent>
+            Вы можете заказать необходимое количество чая в пачках от 25 до 200г.
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+
+    </div>
+  </div>
+</main>
+
+<ng-template #popup let-modal>
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="staticBackdropLabel">Посмотрите наши чайные коллекции</h1>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-footer">
+    <a class="btn btn-primary" (click)="modal.close('Close click')" [routerLink]="'/catalog'"
+       routerLinkActive="active">Смотреть</a>
+  </div>
+</ng-template>
+

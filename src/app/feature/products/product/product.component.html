@@ -1,0 +1,17 @@
+<div class="container py-5">
+  <div class="p-2 h-100">
+    <div class="col h-100 d-flex flex-column mt-0 p-0">
+      <a href="../../../../assets/images/tea-collection/image-1.png" class="product__image text-center">
+        <img src="{{product.image}}" class="d-inline-block w-25" alt="Image 1">
+      </a>
+      <div class="h-100 p-4 h-50 d-flex flex-column align-items-center">
+        <h3 class="fs-5 text-body-emphasis mb-3">{{product.title}}</h3>
+        <p class="mb-4 h-100">{{product.description}}</p>
+        <p class="mb-4">Цена: {{product.price}} рублей за 100 грамм</p>
+        <a class="btn btn-outline-primary px-5 mt-2" routerLink='/order' routerLinkActive="active">
+          <span class="px-3">Купить</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
