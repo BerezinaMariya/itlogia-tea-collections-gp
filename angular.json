@@ -19,6 +19,7 @@
           "options": {
             "outputPath": "dist/tea-collections-gp",
             "index": "src/index.html",
+            "baseHref": "/itlogia-tea-collections-gp/",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
